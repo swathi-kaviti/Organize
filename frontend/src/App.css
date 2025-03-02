@@ -1,0 +1,430 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right, rgb(216, 166, 104), rgb(224, 210, 194));
+}
+
+header {
+    background-color: rgb(201, 174, 140);
+    
+    color: white;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-item .nav-link {
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.modal-header {
+    background-color: #f7f7f7;
+}
+
+.modal-body {
+    background-color: #ffffff;
+}
+
+.modal-footer {
+    background-color: #f7f7f7;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #f4f4f4;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/*Header*/
+/* Fix Dropdown Position */
+.navbar-nav .dropdown-menu {
+    position:absolute;
+    top: 100%;  /* Ensures the dropdown appears just below the button */
+    left: 0;
+    right: 0;  /* Stretch the menu to full width */
+    z-index: 1050; /* Ensure the dropdown appears above other content */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
+    max-height: 3000px; /* Optional: Limit the dropdown height */
+    overflow-y: auto; /* Optional: Make the dropdown scrollable only if necessary */
+  }
+  
+  /* Fix the space for the dropdown */
+  .navbar-nav .nav-item {
+    position: relative;
+  }
+  
+  /* Adjust navbar collapse when toggled */
+  .navbar-collapse {
+    position: relative;
+    z-index: 1050; /* Ensure the navbar content stays on top of the dropdown */
+  }
+  
+  /* Optional: Remove unnecessary horizontal scrolling */
+  body {
+    overflow-x: hidden;
+  }
+  header {
+    background-color: rgb(201, 174, 140);
+    height: 60px;
+    border-bottom: 2px solid black;
+  }
+  
+
+
+  /*modal*/
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;  /* Ensure it appears on top */
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    z-index: 1001; /* Make sure it's above overlay */
+  }
+
+
+  /*notes*/
+  /* General Notes Container */
+.notes-container {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  /* Button to add new notes */
+  .add-note-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .add-note-btn:hover {
+    background-color: #5a6268;
+  }
+  
+  /* Styling for the saved notes section */
+  .saved-notes {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .note-item {
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 500px;
+  }
+  
+  .note-item h5 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+  }
+  
+  /* Modal Styling */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .custom-modal {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .modal-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  textarea.form-control, input.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  textarea.form-control {
+    resize: vertical;
+  }
+  
+  textarea.form-control::placeholder, input.form-control::placeholder {
+    font-style: italic;
+    color: #aaa;
+  }
+  
+  button.btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  button.btn-secondary:hover {
+    background-color: #5a6268;
+  }
+  
+  button.btn-primary {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  button.btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  button.btn-danger {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  button.btn-danger:hover {
+    background-color: #c82333;
+  }
+
+  
+/*Calender*/
+/* Calendar container */
+#calnav {
+    margin-top: 70px;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    overflow-x: auto; /* Allows horizontal scrolling if needed */
+    height:530px;
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  /* Table header and cells */
+  th, td {
+    width: 14.28%; /* Each column takes equal width */
+    text-align: center;
+    padding: 10px;
+    font-size: 18px; /* Reduced for responsiveness */
+    border: 1px solid black;
+    word-wrap: break-word;
+  }
+  
+  /* Highlighted today's date */
+  td.today {
+    background-color: rgb(189, 154, 111);
+    color: white;
+    font-weight: bold;
+  }
+  /* Buttons */
+  button.btn {
+    font-size: 16px;
+    padding: 8px 12px;
+    margin: 5px;
+  }
+  .date-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: inherit; /* Inherits the normal text color */
+  }
+  .date-btn:hover{
+    background: rgb(224, 210, 194);
+  }
+  
+  .has-note {
+    background-color: yellow !important;
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 600px) {
+    th, td {
+      font-size: 14px; /* Reduce font size for smaller screens */
+      padding: 5px;
+    }
+  
+    button.btn {
+      font-size: 14px;
+      padding: 5px 10px;
+    }
+  }
+  
+
+/*Todo*/
+
+
+h1 {
+    font-size: 60px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  button#new {
+    width:auto;
+    height: 50px;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 25px;
+    margin: 20px;
+    background-image: linear-gradient(to right, rgb(76, 67, 77), rgb(121, 118, 122));
+  }
+  
+  button#new:hover {
+    box-shadow: 0px 0px 5px black;
+  }
+  
+  button#add {
+    width: 100px;
+    height: auto;
+    margin: 20px;
+    border-radius: 25px;
+    border: 1px solid black;
+    font-size: 20px;
+    background-image: linear-gradient(to right, rgb(76, 67, 77), rgb(121, 118, 122));
+  }
+  button#new:hover {
+    box-shadow: 0px 0px 5px black;
+  }
+  .centered-input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px; /* Adjust width as needed */
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  li.lists {
+    font-size: 30px;
+    background-color: rgba(156, 151, 151, 0.692);
+    border: 2px solid black;
+    box-shadow: 0px 0px 50px rgba(85, 84, 84, 0.692);
+    border-radius: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 60%; /* Adjust width as needed */
+    max-width: 600px; /* Limit the maximum width */
+    margin-left: auto;
+    margin-right: auto; /* Center align the list items */
+  }
+  
+  button#remove {
+    outline: none;
+    box-shadow: none;
+    margin-right: 10px;
+    border: 0px solid black;
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+  #remove:hover {
+    background-color: lightgray;
+  }
+  
+  
